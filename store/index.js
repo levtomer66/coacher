@@ -11,17 +11,17 @@ export const mutations = {
   }
 }
 export const actions = {
-  nuxtServerInit ({ commit }, { req }) {
-    let auth = null
-    if (req.headers.cookie) {
-      const parsed = cookieparser.parse(req.headers.cookie)
-      try {
-          console.log(parsed.blogsiteToken);
-           auth = parsed.blogsiteToken
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    commit('setAuth', auth)
-  }
+  // nuxtServerInit ({ commit }, { req }) {
+  //   let auth = null
+  //   if (req.headers.cookie) {
+  //     const parsed = cookieparser.parse(req.headers.cookie)
+  //     try {
+  //         console.log(parsed.blogsiteToken);
+  //          auth = parsed.blogsiteToken
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   }
+  //   commit('setAuth', auth)
+  // }
 }
