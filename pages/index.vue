@@ -7,6 +7,12 @@
             to="login"
             >התחבר</nuxt-link
           >
+      <img
+          :src="user.picPath"
+          alt="profile"
+          v-if="this.$store.state.auth !== null"
+          @click="dropdown()"
+        />
     <form-wizard title="קואצ׳ר"
                       subtitle="אחלה קואצ׳ר"
                       shape="tab"
@@ -48,7 +54,9 @@ export default {
   components: { Step1, Step2, Step3, Step4 },
   data() {
     return {
-      finalModel: {}
+      finalModel: {},
+      user: {}
+
     }
   },
   methods: {
