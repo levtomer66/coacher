@@ -1,6 +1,12 @@
 <template>
   <div id="app">
   <div>
+    <nuxt-link
+            class="nav-link w-nav-link"
+            v-if="this.$store.state.auth === null"
+            to="login"
+            >התחבר</nuxt-link
+          >
     <form-wizard title="קואצ׳ר"
                       subtitle="אחלה קואצ׳ר"
                       shape="tab"
