@@ -19,6 +19,5 @@ export const getPostsByCategory = async (category) => {
 }
 
 export const savePost = async (doc) => {
-
     return await (await db).collection('posts').updateOne({}, doc, { upsert: true});
 }

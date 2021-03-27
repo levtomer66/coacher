@@ -1,7 +1,13 @@
 <template>
   <div id="app">
   <div>
-    <form-wizard shape="square" color="#3498db">
+    <form-wizard title="קואצ׳ר"
+                      subtitle="אחלה קואצ׳ר"
+                      shape="tab"
+                      back-button-text="אחורה"
+                      next-button-text="קדימה"
+                      finish-button-text="סיימתי!" color="#3498db"
+                      @on-complete="finish">
       <tab-content title="עם פתיחת יום" icon="ti-user" :before-change="()=>validateStep('step1')">
         <Step1 ref="step1" @on-validate="mergePartialModels" />
       </tab-content>
@@ -14,9 +20,9 @@
       <tab-content title="כלי חמשת עקרונות ההצלחה לכתוב 5 הצלחות כל יום" icon="ti-settings" :before-change="()=>validateStep('step4')">
         <Step4 ref="step4" @on-validate="mergePartialModels" />
       </tab-content>
-      <tab-content title="Last step" icon="ti-check">
+      <tab-content title="סיום" icon="ti-check">
         Here is your final model:
-       <pre>{{finalModel}}</pre>
+       <pre>{{ finalModel }}</pre>
       </tab-content>
     </form-wizard>
   </div>

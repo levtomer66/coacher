@@ -23,19 +23,6 @@ export const getPosts = async (req, res) => {
   }
 
 export const savePost = async (req, res) => {
-    var doc = {
-      _id: req.body.postId,
-      postTitle: req.body.postTitle,
-      postDescription: req.body.postDescription,
-      postContent: req.body.postContent,
-      postImg: req.body.postImg,
-      postCategory: req.body.postCategory,
-      postIsPublished: false,
-      authorId: req.user._id,
-      authorName: `${req.user.firstName} ${req.user.familyName}`,
-      authorPic: req.user.picPath,
-      authorEmail: req.user.email
-    }
-    await postsService.savePost(doc);
+    await postsService.savePost(req.body);
     return res.status(201).json({msg: "post saved", post_id: doc._id})
 }
