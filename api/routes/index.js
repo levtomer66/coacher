@@ -2,9 +2,9 @@ const app = require('../app')
 const passport = require("passport");
 const auth = passport.authenticate("jwt", { session: false });
 
-app.get('/api', auth, (req, res) => {
+app.get('/api', (req, res) => {
     res.status(200).send({
-        message: 'BLOGSITE API!'
+        message: 'COACHER API!'
     })
 })
 

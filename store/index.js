@@ -16,8 +16,8 @@ export const actions = {
     if (req && req.headers && req.headers.cookie) {
       const parsed = cookieparser.parse(req.headers.cookie)
       try {
-          console.log(parsed.blogsiteToken);
-           auth = parsed.blogsiteToken
+          console.log(parsed.coacherToken);
+           auth = parsed.coacherToken
       } catch (err) {
         console.error(err);
       }

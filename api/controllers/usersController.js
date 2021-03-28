@@ -36,7 +36,7 @@ export const googleCallback = () => {
 
 const getExtraUserDataFromGoogle = async (accessToken, done) => {
   const fields = "birthdays,genders";
-  const url = `https://people.googleapis.com/v1/people/me?personFields=${fields}&key=AIzaSyCKA5iksP_nnW13z33rOXFdC-QDwVBAafM&access_token=${accessToken}`;
+  const url = `https://people.googleapis.com/v1/people/me?personFields=${fields}&key=AIzaSyCZSoKAso-u3xF-IVkGZ5nBlW_Fth0JxVU&access_token=${accessToken}`;
   console.log(url);
   const googleExtraFields = await axios.get(url).catch(e => {
     const err = new Error("failed to fetch user details");
@@ -125,7 +125,7 @@ export const generateUserToken = (req, res) => {
       subject: userId.toString()
     }
   );
-  res.cookie("blogsiteToken", token, {
+  res.cookie("coacherToken", token, {
     domain: process.env.NODE_ENV === "production" ? COOKIE_DOMAIN : "",
     expires: token.exp * 1000,
   }).redirect('/');

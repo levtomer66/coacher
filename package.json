@@ -1,7 +1,7 @@
 {
   "name": "nuxtjs",
   "version": "1.0.0",
-  "description": "Tomer's Blog",
+  "description": "Coacher",
   "author": "Tomer Lev",
   "private": true,
   "scripts": {

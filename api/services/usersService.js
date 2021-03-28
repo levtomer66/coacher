@@ -14,10 +14,10 @@ export const getUserByEmail = async (email) => {
 export const createUser = async (userObj) => {
     console.log("want to create pra:" + userObj)
     const user = await ((await db).collection("users").updateOne({}, { $set: userObj },{upsert: true}));
-    if (result.result.nModified < 0) {
+    if (user.result.nModified < 0) {
       throw new Error("User upsert failed")
     }
-    console.log(`${result.result.nModified} document inserted`);
+    console.log(`${user.result.nModified} document inserted`);
     return user;
 }
 

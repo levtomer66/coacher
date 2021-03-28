@@ -11,7 +11,7 @@
   ],
   "build": {
     "env": {
-      "API_URL": "https://blogsite.vercel.app"
+      "API_URL": "https://coacher.vercel.app"
     }
   },
   "routes": [{
